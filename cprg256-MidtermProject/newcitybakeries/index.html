@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>New City Bakery</title>
+    <header class="headerBackground">
+        <div id="headerTop">
+            <p class="headerContact">Phone: (123)123-1234</p>
+        </div>
+        <div id = "mainHeader">
+        <h1>New City Bakery</h1>
+        <p>Get a custom cake and pastry made today!</p>
+        </div>
+    </header>
+</head>
+<body>
+    <div id="main">   
+    <article>
+        <form>
+        <fieldset id="cakeType">
+            <h2>Select Type of Cake</h2>
+            <p><i>Please select one</i></p>
+            <input type="radio" name="cakeType" id="sheetCake" value="18.00" onclick="makeSelectionActive();"><label>Sheet Cake(square or rectangle)</label><br>
+            <input type="radio" name="cakeType" id="roundCake" value="15.00" onclick="makeSelectionActive();"><label>Round Cake</label><br>
+        </fieldset>
+
+        <fieldset id = "sheetCakeSection" disabled = "true">
+            <h2>Sheet Cake</h2>
+            <p id="pArticle">Base price: $18.00 <br>
+            +$0.02 per cm<sup>2</sup> over base <br>
+            Adding layers increases base cost by 50%</p>
+
+        <label>Length (min 30cm, max 60cm):</label><br>
+        <input type="number" min="30" max="60" maxlength="2" size="3" id="cakeLength"><br>
+        <label>Width (min 30cm, max 60cm):</label><br>
+        <input type="number" min="30" max="60" maxlength="2" size="3" id="cakeWidth"><br>
+        <label>Number of Layers (max 3): </label><br>
+        <select id="sheetCakeLayer">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select> 
+        </fieldset>  
+  
+        <fieldset id="roundCakeSection" disabled = "true">
+            <h2>Round Cake</h2>
+            <p id=pArticle>Base price: $15.00 <br>
+            +$0.02 per cm<sup>2</sup> over base<br>
+            Adding layers increases base cost by 50%</p>
+        <label>Radius Size (min 15cm, max 30cm):</label><br>
+        <input type="number" min="15" max="30" maxlength="3" size="3" id="cakeRadius"><br>
+        <label>Number of Layers (max 3):</label><br>
+        <select id="roundCakeLayer">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                </select> 
+        </fieldset>
+    
+        <fieldset>
+            <h2>Additional Choices</h2>
+            <input type="checkbox" name="extra" id="creamCheese" value="5.00"><label>Cream Cheese Icing +$5.00</label> <br>
+            <input type="checkbox" name="extra" id="fruitAlmonds" value="7.00"><label>Fruit & Almond Toppings +$7.00</label> <br>
+            <input type="checkbox" name="extra" id="fruitJam" value="4.00"><label>Fruit & Jam Filling +$4.00</label>
+        </fieldset>
+     
+        <div id = "addToOrder">
+            <input  id="orderBtn" type="button" value="Add to Cart" onclick="showInvoice()">
+        </div>
+        <fieldset>
+            <h2>Your Information</h2>
+            <table class="center">        
+                <tbody>
+                    <tr>
+                        <td><label>First Name:*</label></td>
+                        <td><label>Last Name:*</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="FirstName" placeholder="First Name" pattern="[a-zA-Z\-\s]+" autofocus required></td>
+                        <td><input type="text" id="LastName" placeholder="Last Name" pattern="[a-zA-Z\-\s]+"  required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><label>Address:*</label></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="text" id="Address" placeholder="Address" size="47" required></td>
+                    </tr>
+                    <tr>
+                        <td><label>Postal Code:*</label></td>
+                        <td><label>Phone #:*</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="PostalCode" placeholder="A1A 1A1" maxlength="7" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]" required></td>
+                        <td><input type="tel" id="Phone" placeholder="xxx-xxx-xxxx" maxlength="12" pattern="\d{3}\-\d{3}\-\d{4}" required></td>
+                    </tr>
+                    <tr>
+                        <td><label>Email:*</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="email" id="Email" placeholder="example@domain.com" required></td>
+                    </tr>
+                </tbody>
+                <tfoot></tfoot>
+                </table>
+                <input type="submit" id="submit" value="Submit">
+        </fieldset>
+        </form>
+        <p id="customerName"></p>
+        <p id="customerAddress"></p>
+        <p id="postalCode"></p>
+        <p id="customerPhone"></p> 
+        <p id="customerEmail"></p> <br>
+        <p id="title"></p>
+        <P id="items"></P>
+    
+        <table id="invoiceTable">
+            <thead>
+                <tr>
+                    <th class="invoiceData" id="item"></th>
+                    <th class="invoiceData" id="price"></th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th class="invoiceData" id="total"></th>
+                    <th class="invoiceData" id="totalCalculation"></th>
+                </tr>
+            </tfoot>
+            <tbody>
+            <tr>
+                <td class="invoiceData" id="itemN"></td>
+                <td class="invoiceData" id="itemP"></td>
+            </tr>
+            </tbody>
+        </table>
+    </article>     
+    </div>
+    </body>
+    <footer>
+        <div class="footerSection">
+            <div class="leftSection">
+                <h3>Hours of Operation:</h3>
+                <p>Monday-Friday: 9am-9pm</p>
+                <p>Saturday-Sunday: 9am-4pm</p>
+                <p>Holidays: Closed</p>
+            </div>
+            <div class="middleSection">
+                <p>Thank you for your order:)</p>
+            </div>
+            <div class="rightSection">
+                <h3>Location:</h3>
+                <p>123 Sandview Drive SW</p>
+                <p>Calgary, AB</p>
+            </div>
+        </div>
+    </footer>
+    <script src="bakery.js"></script>
+</html>
+
+    

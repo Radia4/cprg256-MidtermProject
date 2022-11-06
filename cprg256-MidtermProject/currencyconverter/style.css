@@ -1,0 +1,77 @@
+body {
+    font-size: 22px !important;
+    font-family: Verdana, Tahoma, sans-serif;
+    background-color: #eeddd4 !important;
+  }
+  h1 {
+    margin: 0;
+    font-weight: bolder !important;
+    font-size: 40pt !important;
+    font-family: Verdana, Tahoma, sans-serif;
+    text-align: center;
+  }
+  div#rate {
+    text-align: center;
+  }
+  h2 {
+    font-weight: bolder !important;
+    font-family: Verdana, Tahoma, sans-serif;
+  }
+  header {
+    background-color:#b5838d;
+    color: #ffb4a2;
+    padding: 1%;
+    margin-bottom: 1%;
+  }
+  section#converter > div {
+    margin: 0 2%;
+  }
+  section#converter div#source {
+    margin-bottom: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ab575a;
+  }
+  section#converter div#target {
+    margin-bottom: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ab575a;
+  }
+  .btn{
+    background-color: #355070 !important;
+    color: white !important;
+    padding: 1rem !important;
+  }
+
+  section#converter div#source h2 {
+    align-self: flex-start;
+  }
+  section#converter div#target h2 {
+    align-self: flex-start;
+  }
+  section#converter div#source .btn-group{
+    width: 100%;
+    margin-bottom: 2%;
+    padding: 2%;
+  }
+  section#converter div#target .btn-group {
+    width: 100%;
+    margin-bottom: 2%;
+    padding: 2%;
+  }
+ 
+    section#converter div#source .input-group,
+  section#converter div#target .input-group {
+      width: 30%;
+    }
+  footer{
+    text-align: center !important;
+    font-size: 14pt;
+    padding-top: 5%;
+  }
+  .btn-success{
+    margin: 0.1%;
+  }

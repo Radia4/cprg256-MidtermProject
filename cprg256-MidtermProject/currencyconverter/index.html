@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="style.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<title>Currency Converter</title>
+</head>
+<body>
+	<header>
+		<h1>Currency Converter</h1>
+	</header>
+	<section id="converter">
+		<div id="source">
+			<h2>Input amount</h2>
+			<div class="btn-group" role="group" aria-label="Source Currencies">
+				<button type="button" class="btn btn-success" onclick="setSourceCurrency(event, 'euro')">Euro
+				</button>
+				<button type="button" class="btn btn-light" onclick="setSourceCurrency(event, 'usd')">US Dollar
+				</button>
+				<button type="button" class="btn btn-light" onclick="setSourceCurrency(event, 'cad')">Canadian Dollar
+				</button>
+				<button type="button" class="btn btn-light" onclick="setSourceCurrency(event, 'btc')">Bitcoin 
+				</button>
+				<button type="button" class="btn btn-light" onclick="setSourceCurrency(event, 'eth')">Ethereum
+				</button>
+			</div>
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<div class="input-group-text" id="input-prepend-source">C$</div>
+				</div>
+				<input id="input-source" type="number" class="form-control" value="1" aria-label="Input amount" aria-describedby="btnGroupAddon" oninput="convertAmount()"/>
+			</div>
+		</div>
+		<div id="target">
+			<h2>Output amount</h2>
+			<div class="btn-group" role="group" aria-label="Target Currencies">
+				<button type="button" class="btn btn-light" onclick="setTargetCurrency(event, 'euro')">Euro
+				</button>
+				<button type="button" class="btn btn-light" onclick="setTargetCurrency(event, 'usd')">US Dollar
+				</button>
+				<button type="button" class="btn btn-light" onclick="setTargetCurrency(event, 'cad')">Canadian Dollar
+				</button>
+				<button type="button" class="btn btn-light" onclick="setTargetCurrency(event, 'btc')">Bitcoin
+				</button>
+				<button type="button" class="btn btn-success" onclick="setTargetCurrency(event, 'eth')">Ethereum
+				</button>
+			</div>
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<div class="input-group-text" id="input-prepend-target">US$</div>
+				</div>
+				<input id="input-target" type="text" class="form-control" value="0.73" aria-label="Input amount" aria-describedby="btnGroupAddon" readonly/>
+			</div>
+		</div>
+		<div id="rate">
+			<span id="source-rate">1 Canadian Dollar</span> =
+			<span id="target-rate">0.73 US Dollar</span>
+		</div>
+	</section>
+	<footer><p>Current rates as of November 4, 2022</p></footer>
+	<script src="converter.js"></script>
+</body>
+</html>
+
+	
